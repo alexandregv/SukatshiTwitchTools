@@ -5,10 +5,10 @@ try { $bdd = new PDO('mysql:host=' . $db_host . ';dbname=' . $db_name . ';charse
 catch (Exception $e) { die('Erreur de connexion à la BDD: ' . $e->getMessage()); }
 
 function get_viewers($bdd) {
-    foreach  ($bdd->query('SELECT id, twitch_name, ingame_name FROM game_viewers') as $row) {
-        print $row['id'] . "&emsp;";
-        print  $row['twitch_name'] . "&emsp;";
-        print $row['ingame_name'] . "<br>";
+  foreach  ($bdd->query('SELECT id, twitch_name, ingame_name FROM game_viewers') as $row) {
+    print $row['id'] . "&emsp;";
+    print $row['twitch_name'] . "&emsp;";
+    print $row['ingame_name'] . "<br>";
   }
 }
 
