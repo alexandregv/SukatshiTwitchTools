@@ -7,6 +7,9 @@ catch (Exception $e) { die("Connexion à la BDD impossible. @triinoxys ALED"); }
 if (!isset($_GET['twitch_name']))
   die("Une erreur est survenue. @triinoxys ALED");
 
+if ($bdd->query("SELECT value FROM `vars` where name = 'enabled'")->fetch()['value'] == 'false')
+  die('La Game Viewers est désactivée.');
+
 if ($resp = $bdd->query("SELECT id FROM `game_viewers` where twitch_name = '" . $_GET['twitch_name'] . "'")->fetch())
   die("@" . $_GET['twitch_name'] . " tu es déjà enregistré (#" . $resp['id'] . ").");
 
