@@ -13,7 +13,7 @@ if ($bdd->query("SELECT value FROM `vars` where name = 'enabled'")->fetch()['val
 if ($resp = $bdd->query("SELECT id FROM `game_viewers` where twitch_name = '" . $_GET['twitch_name'] . "'")->fetch())
   die("@" . $_GET['twitch_name'] . " tu es déjà enregistré (#" . $resp['id'] . ").");
 
-if (isset($_GET['ingame_name']))
+if (isset($_GET['ingame_name']) && $_GET['ingame_name'] != "")
   $bdd->query("INSERT INTO `game_viewers`(`twitch_name`, `ingame_name`) VALUES ('" . $_GET['twitch_name'] . "', '" . $_GET['ingame_name'] . "')");
 else
   $bdd->query("INSERT INTO `game_viewers`(`twitch_name`) VALUES ('" . $_GET['twitch_name'] . "')");

@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+table.striped > tbody > tr:nth-child(odd) {
+  background-color: rgba(222, 222, 222, 1) !important;
+}
+
+.page-footer {
+  padding-top: 0px;
+}
+
+.footer-copyright {
+  background-color: #E67E22 !important;
+}
+
+@media screen and (max-width: 720px) { 
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+.inline-icon {
+   vertical-align: bottom;
+}
+
+img {
+  pointer-events: none;
+}
+
+.disallow-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Chrome & Opera */
+}
+
+.allow-select {
+  -webkit-touch-callout: text; /* iOS Safari */
+    -webkit-user-select: text; /* Safari */
+     -khtml-user-select: text; /* Konqueror HTML */
+       -moz-user-select: text; /* Firefox */
+        -ms-user-select: text; /* Internet Explorer/Edge */
+            user-select: text; /* Chrome & Opera */
+}
